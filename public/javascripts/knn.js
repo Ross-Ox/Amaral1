@@ -21,7 +21,7 @@ function main() {
         metric: l2_distance,
         k: 1,
         colors: [
-            'red', 'blue', 'green', 'purple', 'orange',
+            'yellow', 'blue', 'green', 'purple', 'orange',
         ],
         small_step: 3,
         big_step: 10,
