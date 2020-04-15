@@ -42,7 +42,7 @@ function main() {
     redraw();
 
     // Handlers for metric buttons
-    $('#l2-btn').click(function() {
+    /*$('#l2-btn').click(function() {
         // state.metric = l2_distance;
         state.metric = l2_distance;
         redraw();
@@ -50,7 +50,7 @@ function main() {
     $('#l1-btn').click(function() {
         state.metric = l1_distance;
         redraw();
-    });
+    });*/
 
     // Handlers for buttons that set K
     for (var k = 1; k <= 7; k++) {
