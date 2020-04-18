@@ -11,17 +11,17 @@ function main() {
 
     var num_classes = 3;
     var num_points = 10;
-    // var metric = l2_distance;
+    var metric = l2_distance;
     var k = 1;
 
     var state = {
         num_classes: 4,
         num_points: 40,
         cluster_std: 50,
-        //  metric: l2_distance,
+        metric: l2_distance,
         k: 1,
         colors: [
-            'yellow', 'blue', 'green', 'purple', 'orange',
+            'red', 'blue', 'green', 'purple', 'orange',
         ],
         small_step: 3,
         big_step: 10,
@@ -42,7 +42,7 @@ function main() {
     redraw();
 
     // Handlers for metric buttons
-    /*$('#l2-btn').click(function() {
+    $('#l2-btn').click(function() {
         // state.metric = l2_distance;
         state.metric = l2_distance;
         redraw();
@@ -50,7 +50,7 @@ function main() {
     $('#l1-btn').click(function() {
         state.metric = l1_distance;
         redraw();
-    });*/
+    });
 
     // Handlers for buttons that set K
     for (var k = 1; k <= 7; k++) {

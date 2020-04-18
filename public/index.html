@@ -6,22 +6,21 @@
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src='./javascripts/knn.js'></script>
+    <script src='knn.js'></script>
     <style>
         canvas {
-            cursor: grab;
+            cursor: pointer;
         }
         
         .instructions {
             font-size: 14pt;
-            color: orange;
         }
     </style>
 </head>
 
 <body>
     <div class='container-fluid'>
-        <h1>K-Nearest Neighbors</h1>
+        <h1>K-Nearest Neighbors Demo</h1>
         <div class='row'>
             <div class='col-xs-4 col-xs-offset-4 instructions'>
                 This interactive demo lets you explore the K-Nearest Neighbors algorithm for classification.
@@ -39,7 +38,15 @@
         </div>
         <div class='row'>
             <div class='col-xs-4 col-xs-offset-2'>
-                <button type="submit" onclick="window.location.href='quiz.html'">Quiz</button>
+                <h3>Metric</h3>
+                <div class='btn-group' data-toggle='buttons'>
+                    <label class='btn btn-primary btn-lg' id='l1-btn'>
+              <input type='radio' name='metric'> L1
+            </label>
+                    <label class='btn btn-primary btn-lg active' id='l2-btn'>
+              <input type='radio' name='metric' checked> L2
+            </label>
+                </div>
             </div>
             <div class='col-xs-4'>
                 <h3>Num Neighbors (K)</h3>
