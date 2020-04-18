@@ -11,14 +11,14 @@ function main() {
 
     var num_classes = 3;
     var num_points = 10;
-    var metric = l2_distance;
+    // var metric = l2_distance;
     var k = 1;
 
     var state = {
         num_classes: 4,
         num_points: 40,
         cluster_std: 50,
-        metric: l2_distance,
+        //  metric: l2_distance,
         k: 1,
         colors: [
             'yellow', 'blue', 'green', 'purple', 'orange',
