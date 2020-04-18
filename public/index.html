@@ -12,15 +12,42 @@
             cursor: pointer;
         }
         
+        body {
+            background-image: url("./images/fundo.png.png")!important;
+        }
+        
+        .btn,
+        .btn-primary,
+        .btn-lg {
+            color: black;
+            background-color: rgba(0, 0, 0, 0);
+            border-color: black;
+        }
+        
+        div.h3 {
+            position: relative;
+            top: 500px;
+            left: 200px;
+        }
+        
+        .k-1-btn:hover {
+            background-color: black;
+        }
+        
+        .btn:hover {
+            background-color: black;
+        }
+        
         .instructions {
             font-size: 14pt;
+            color: black;
         }
     </style>
 </head>
 
 <body>
     <div class='container-fluid'>
-        <h1>K-Nearest Neighbors Demo</h1>
+        <h1>K-Nearest Neighbors </h1>
         <div class='row'>
             <div class='col-xs-4 col-xs-offset-4 instructions'>
                 This interactive demo lets you explore the K-Nearest Neighbors algorithm for classification.
@@ -41,11 +68,11 @@
                 <h3>Metric</h3>
                 <div class='btn-group' data-toggle='buttons'>
                     <label class='btn btn-primary btn-lg' id='l1-btn'>
-              <input type='radio' name='metric'> L1
-            </label>
+                  <input type='radio' name='metric'> L1
+                </label>
                     <label class='btn btn-primary btn-lg active' id='l2-btn'>
-              <input type='radio' name='metric' checked> L2
-            </label>
+                  <input type='radio' name='metric' checked> L2
+                </label>
                 </div>
             </div>
             <div class='col-xs-4'>
@@ -115,7 +142,23 @@
             </div>
         </div>
     </div>
+
     <div>
+        <div id="conteudo-secundario">
+            <h1>k-nearest neighbors algorithm</h1>
+
+            <p>
+                The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for classification and regression.In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification
+                or regression, our example is of classification: In k-NN classification, the output is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its
+                k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor. In k-NN regression, the output is the property value for the object. This value
+                is the average of the values of k nearest neighbors. k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until function evaluation.
+            </p>
+            <p>To perform a quiz related to the algorithm just click on the quiz button
+                <a class="btn btn-primary btn-lg" href="./quiz.html" role="button">Quiz</a>
+            </p>
+        </div>
+
+    </div>
     </div>
 </body>
 

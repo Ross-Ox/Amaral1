@@ -21,7 +21,7 @@ function main() {
         metric: l2_distance,
         k: 1,
         colors: [
-            'red', 'blue', 'green', 'purple', 'orange',
+            'red', 'blue', 'green', 'black', 'orange',
         ],
         small_step: 3,
         big_step: 10,
@@ -188,14 +188,14 @@ function draw_points(ctx, points, colors) {
     }
 }
 
-
+// Metrica Euclidiano- é a distância entre dois pontos
 function l2_distance(p1, p2) {
     var dx = p1[0] - p2[0];
     var dy = p1[1] - p2[1];
     return Math.sqrt(dx * dx + dy * dy);
 }
 
-
+//Metrica Manhattan- é uma métrica nova em que a distância entre dois pontos é a soma das diferenças absolutas entre as suas coordenadas.
 function l1_distance(p1, p2) {
     var dx = p1[0] - p2[0];
     var dy = p1[1] - p2[1];
