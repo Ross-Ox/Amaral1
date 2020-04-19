@@ -1,6 +1,6 @@
 # Amaral-
 Site KNN
-                                                              Enquadramento do Projeto 
+                                                              Enquadramento do Projeto                                      
 A inteligência artificial é a ciência que procura estudar e compreender o fenómeno da inteligência e, ao mesmo tempo, um ramo da engenharia, na medida em que procura construir instrumentos para apoiar a inteligência humana. Juntas, a ciência e a engenharia pretendem permitir que máquinas realizem tarefas que, quando são realizadas por seres humanos, precisam do uso da inteligência. 
 Na prática, a IA investe na procura do modo como os seres humanos pensam com o objetivo de elaborar teorias e modelos da Inteligência como programas de computador. Um sistema IA, além de ser capaz de armazenar e manipular dados, consegue também adquirir, representar e manipular conhecimento. Esta manipulação diz respeito à capacidade de deduzir ou inferir novos conhecimentos a partir do conhecimento existente e de utilizar métodos de representação e manipulação para resolver problemas complexos. 
 O objetivo deste projeto é criar um módulo de uma plataforma para auxiliar na compreensão de algumas das técnicas mais simples de IA servindo como auxiliar educativo, mas também como uma forma de divulgar e esclarecer qualquer pessoa que possa estar interessada em saber mais sobre esta área. 
