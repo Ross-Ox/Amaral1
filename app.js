@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 /* A montar o router com um determinado caminho  */
 
-app.use('/api/classes', IndexRoutes);
+app.use('/api/Questionario', IndexRoutes);
 
 
 

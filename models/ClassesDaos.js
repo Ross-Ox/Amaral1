@@ -8,7 +8,7 @@ module.exports.getAllClasses = function(callback, next) {
             callback(err, { code: 500, status: "Error in the connection to the database" })
             return;
         }
-        conn.query("select * from classes ",
+        conn.query("select * from Questionario ",
             function(err, results) {
 
                 conn.release();
