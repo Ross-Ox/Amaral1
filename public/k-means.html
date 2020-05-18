@@ -1,1 +1,65 @@
 <!DOCTYPE html>
+<html>
+
+<head>
+    <title>K-Means</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
+    <link rel="stylesheet" type="text/css" href="./stylesheets/means.css">
+    <script src='./javascripts/k-means.js'></script>
+
+</head>
+<style>
+    body {
+        background-image: url("./images/fundo.png.png")!important;
+    }
+</style>
+
+<body>
+    <div class='container-fluid'>
+        <h1>K-Means</h1>
+
+        <div class='row'>
+            <div class='col-xs-4 col-xs-offset-4 instructions'>
+                <p>
+                    🅽🅾🆃🅴
+                    <p>
+                        ➤This interactive demo lets you explore the K-Means algorithm.
+                        <p>
+                            ➤Random points are generated in the graph and the algorithm groups the points in the closest clusters (groups). Clusters are the green points. the other points are centroides of the nearest cluster. ~
+                            <p>
+                                ➤You can choose the number of cluster and the points (Cluster Centroides) are generated randomly through the database!
+                                <p>
+                                    ➤Advise to choose a clusters from 1 to 4 because it has little data to group many clusters.
+                                    <p>
+                                        ➤The algorithm assigns each data point to the centroid of the nearest cluster. The algorithm moves the centroid (points) to the average position of all data points that belong to it. If none of the centroids move, it means that the algorithm has stopped
+                                        and all iterations have been made..
+
+
+                                        <div class='col-xs-4'>
+                                            <input type="text" id="number" name="number" />
+                                            <button type="button" onclick="setup();">Start</button>
+
+
+                                        </div>
+            </div>
+            <canvas id="canvas" height="400" width="400"></canvas>
+            <div>
+                <div id="conteudo-secundario">
+                    <h1>k-means algorithm</h1>
+                    <p>
+                        k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid),
+                        serving as a prototype of the cluster.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <footer>
+                <p>IA Page<br>
+                    <a href="mailto:Rossamaral@hotmail.com">IApage@hotmail.com</a></p>
+            </footer>
+
+</body>
+
+</html>

@@ -4,14 +4,9 @@ var opccoes;
 window.onload = function() {
     Quiz = document.getElementById('quizKnn')
     getperguntas()
-
     opccoes = document.getElementById('opccoes')
 
-
-
 }
-
-
 
 function getperguntas() {
     $.ajax({

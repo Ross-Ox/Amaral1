@@ -1,0 +1,46 @@
+canvas {
+    cursor: pointer;
+    border: 1px solid #000000;
+}
+
+p {
+    text-align: center;
+}
+
+.col-xs-4 {
+    text-align: center
+}
+
+.btn,
+.btn-primary,
+.btn-lg {
+    color: black;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: black;
+}
+
+div.h3 {
+    position: relative;
+    top: 500px;
+    left: 200px;
+}
+
+.k-1-btn:hover {
+    background-color: black;
+}
+
+.btn:hover {
+    background-color: black;
+}
+
+.instructions {
+    font-size: 14pt;
+    color: black;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: black;
+    color: white;
+}

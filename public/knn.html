@@ -6,41 +6,11 @@
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./stylesheets/nn.css">
     <script src='./javascripts/knn.js'></script>
     <style>
-        canvas {
-            cursor: pointer;
-        }
-        
         body {
             background-image: url("./images/fundo.png.png")!important;
-        }
-        
-        .btn,
-        .btn-primary,
-        .btn-lg {
-            color: black;
-            background-color: rgba(0, 0, 0, 0);
-            border-color: black;
-        }
-        
-        div.h3 {
-            position: relative;
-            top: 500px;
-            left: 200px;
-        }
-        
-        .k-1-btn:hover {
-            background-color: black;
-        }
-        
-        .btn:hover {
-            background-color: black;
-        }
-        
-        .instructions {
-            font-size: 14pt;
-            color: black;
         }
     </style>
 </head>
@@ -48,6 +18,7 @@
 <body>
     <div class='container-fluid'>
         <h1>K-Nearest Neighbors </h1>
+
         <div class='row'>
             <div class='col-xs-4 col-xs-offset-4 instructions'>
                 🅽🅾🆃🅴
@@ -57,6 +28,11 @@
                         ➤Each point in the plane is colored with the class that would be assigned to it using the K-Nearest Neighbors algorithm. Points for which the K-Nearest Neighbor algorithm results in a tie are colored white.
                         <p>
                             ➤You can move points around by clicking and dragging!
+                            <p>
+                                ➤L1 is Metrics Euclidean it's the distance between two points, which can be proved by the repeated application of the Pythagorean theorem.
+                                <p>
+                                    ➤L2 is Manhattan Metric where the distance between two points is the sum of the absolute differences between their coordinates.
+
 
             </div>
         </div>
@@ -64,6 +40,7 @@
         <div class='row'>
             <div class='col-xs-12 text-center'>
                 <canvas id='canvas'></canvas>
+
             </div>
         </div>
         <div class='row'>
@@ -157,12 +134,17 @@
                 is the average of the values of k nearest neighbors. k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until function evaluation.
             </p>
             <p>To perform a quiz related to the algorithm just click on the quiz button
-                <a class="btn btn-primary btn-lg" href="./quiz.html" role="button">Quiz</a>
+                <a class="btn btn-primary btn-lg" href="./quizKNN.html" role="button">Quiz</a>
             </p>
         </div>
 
     </div>
     </div>
+
+    <footer>
+        <p>IA Page<br>
+            <a href="mailto:Rossamaral@hotmail.com">IApage@hotmail.com</a></p>
+    </footer>
 </body>
 
 </html>

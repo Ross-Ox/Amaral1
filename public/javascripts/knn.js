@@ -1,6 +1,6 @@
 function main() {
-    var HEIGHT = 600;
-    var WIDTH = 800;
+    var HEIGHT = 400;
+    var WIDTH = 850;
     var canvas = document.getElementById('canvas');
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
