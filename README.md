@@ -8,3 +8,5 @@ O módulo desenvolvido neste projeto irá ajudar na compreensão de duas técnic
 Objetivos do Projeto 
 O objetivo do projeto é conseguir melhorar o acesso a informações relativas aos algoritmos KNN e Kmeans. A página irá apresentar informações relevantes dos algoritmos, e também exercícios relativos ao algoritmo, o objetivo é que o utilizador tenha acesso a estas informações e que tenha logo um feedback sobre o que foi aprendido durante o acesso a página. 
   Caso o projeto seja bem-sucedido, seria interessante aumentar os exercícios e aumentar diferentes algoritmos no site e consequentemente mais informações sobre os mesmos.  
+
+//Questionaires
