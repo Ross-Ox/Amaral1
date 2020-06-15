@@ -4,9 +4,15 @@
 <html lang="pt">
 
 <head>
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <script src="./javascripts/quizKNN.js"></script>
+    <!-- JS, Popper.js, and jQuery -->
     <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <!--     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="./javascripts/quizKNN.js"></script>
+
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="./stylesheets/quizK.css">
 
@@ -14,17 +20,53 @@
 
 </head>
 
+<style>
+    body {
+        background-image: url("./images/fundo.png.png")!important;
+    }
+</style>
+
 <body>
 
 
-    <h1>Questionario</h1>
-    <p>Perguntas sobre knn </p>
-    <p id='quizKnn'></p>
-    <input type="button" value="Submit" onclick="Verificar()">
 
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 col-lg-6 col-xl-6 col-12">
+            <div class="card p-3 bg">
+                <h1>Questionário</h1>
+                <h2>K-Nearest Neighbors </h2>
+                <ul class="list-group">
+                    <li class="list-group-item" id='quizKnn'></li>
+                    <p></p>
+                </ul>
+                <div class="button">
+                    <a href='knn.html' class="btn">Cancel</a>
+                    <a onclick="submeter()" class="btn">Done</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
+    <!-- Modal -->
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Quiz</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to save your answer? If Yes, answer the next question!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

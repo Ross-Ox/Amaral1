@@ -1,15 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var ClassesDaos = require("../models/quizknnDaos");
+var kmeans = require('../models/KMeans');
 
 
 router.get('/', function(req, res, next) {
 
-    ClassesDaos.getAllClasses(function(err, result) {
+    kmeans.getAllData(function(err, result) {
         if (err) {
             res.status(result.code).json(err);
             return;
         }
+        console.log("Information ::: ", result.data);
         res.status(result.code).send(result.data);
     }, next)
 })

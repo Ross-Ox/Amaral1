@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-var ClassesDaos = require("../models/quizknnDaos");
+var ClassesDaos = require("../models/quizkmeansDaos");
 
 
 router.get('/', function(req, res, next) {
 
-    ClassesDaos.getAllClasses(function(err, result) {
+    ClassesDaos.getAllQuestion(function(err, result) {
         if (err) {
             res.status(result.code).json(err);
             return;

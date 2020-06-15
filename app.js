@@ -10,6 +10,8 @@ var app = express();
 /*Está a fazer a requisição do router criado */
 
 var IndexRoutes = require('./routes/index');
+var kmeans = require('./routes/K-means');
+var quizkmeans = require('./routes/quizkmeans');
 
 // view engine setup
 
@@ -26,6 +28,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/Questionario', IndexRoutes);
 
+app.use('/api/data', kmeans);
+
+app.use('/api/Questionario_2', quizkmeans)
 
 
 // catch 404 and forward to error handler

@@ -1,17 +1,18 @@
 var Quiz;
 var test;
 var opccoes;
+
 window.onload = function() {
-    Quiz = document.getElementById('quizKnn')
+    Quiz = document.getElementById('quizKmeans')
     getperguntas()
-        //opccoes = document.getElementById('opccoes')
+    opccoes = document.getElementById('opccoes')
 
 }
 var quizz = []
 
 function getperguntas() {
     $.ajax({
-        url: '/api/Questionario',
+        url: '/api/Questionario_2',
         method: 'get',
         contentType: "application/json", // sending in json
         dataType: "json", // receiving in json
@@ -24,8 +25,8 @@ function getperguntas() {
                 id1 = Math.random()
                 id2 = Math.random()
 
-                html += "<p>" + quiz[i].perguntas + "</br><input type='checkbox' name='quiz' onclick='test(" + id1 + ");verificar(" + quiz[i].idQuestionario + ")'  value='Yes' id='" + id1 + "'>Yes</br><input type='checkbox' name='quiz' onclick='test(" + id2 + ");verificar(" + quiz[i].idQuestionario + ")' value='No' id='" + id2 + "'>No</p>";
-                // console.log(quiz[i].respostas)
+                html += "<p>" + quiz[i].perguntas + "</br><input type='radio' name='quiz' onclick='test(" + id1 + ");verificar(" + quiz[i].idQuestionario_2 + ")'  value='Yes' id='" + id1 + "'>Yes</br><input type='radio' name='quiz' onclick='test(" + id2 + ");verificar(" + quiz[i].idQuestionario_2 + ")' value='No' id='" + id2 + "'>No</p>";
+
             }
 
             Quiz.innerHTML = html;
@@ -49,7 +50,7 @@ var list = []
 function verificar(val) {
 
     for (i in quiz) {
-        if (quiz[i].idQuestionario == val) {
+        if (quiz[i].idQuestionario_2 == val) {
             certo = quiz[i].respostas
 
             perg = quiz[i].perguntas
@@ -57,25 +58,20 @@ function verificar(val) {
     }
     if (certo == sessionStorage.getItem('resp')) {
 
-        /* alert("Your answer has been saved \nAnswer the next question! ") */
-        $('#modelId').modal('show');
+        alert('Your answer has been saved \nAnswer the next question!')
 
     } else {
-        /* alert("Your answer has been saved  \nAnswer the next question!") */
-        $('#modelId').modal('show');
+        alert("Your answer has been saved  \nAnswer the next question!")
     }
     list.push(['Correct answers:' + '\n' + perg + '\n' + certo + '\n'])
-        //console.log(list)
+    console.log(list)
 
 }
 
 function submeter() {
     alert(list)
 
-
 }
-
-
 
 function test(o) {
     resp = document.getElementById(o).value

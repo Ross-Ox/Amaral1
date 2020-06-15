@@ -2,6 +2,37 @@ var canvas;
 var ctx;
 var height = 400;
 var width = 400;
+var data = [];
+
+async function getData() {
+    await $.ajax({
+        url: '/api/data',
+        method: 'get',
+        contentType: "application/json", // sending in json
+        dataType: "json", // receiving in json
+        success: function(res, status) {
+            valor = res;
+            let dados = [];
+            for (i in valor) {
+                // const obj = JSON.parse(json);
+                var xx = JSON.stringify(valor[i].x)
+                var yy = JSON.stringify(valor[i].y)
+                dados.push([Number.parseInt(xx), Number.parseInt(yy)]);
+
+                console.log(dados);
+            }
+            data = [...dados];
+
+        },
+        error: function() {
+
+        }
+    })
+
+}
+
+
+/*
 var data = [
     [1, 2],
     [2, 1],
@@ -25,18 +56,26 @@ var data = [
     [8, 11],
     [9, 9],
 ];
+*/
+
+
 var means = [];
 var assignments = [];
 var dataExtremes;
 var dataRange;
 var drawDelay = 2000;
 
+
+//console.log(data)
+
 window.onload = function() {
-    setup();
+    /* setup(); */
 
 }
 
-function setup() {
+async function setup() {
+
+    await getData();
 
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
@@ -114,6 +153,7 @@ function initMeans(k) {
 };
 
 function makeAssignments() {
+
 
     for (var i in data) {
         var point = data[i];
@@ -216,7 +256,7 @@ function draw() {
 
         ctx.save();
 
-        ctx.strokeStyle = 'blue';
+        ctx.strokeStyle = 'black';
         ctx.beginPath();
         ctx.moveTo(
             (point[0] - dataExtremes[0].min + 1) * (width / (dataRange[0] + 2)),
@@ -241,7 +281,7 @@ function draw() {
         var x = (point[0] - dataExtremes[0].min + 1) * (width / (dataRange[0] + 2));
         var y = (point[1] - dataExtremes[1].min + 1) * (height / (dataRange[1] + 2));
 
-        ctx.strokeStyle = '#333333';
+        ctx.strokeStyle = 'red';
         ctx.translate(x, y);
         ctx.beginPath();
         ctx.arc(0, 0, 5, 0, Math.PI * 2, true);
