@@ -38,9 +38,7 @@ div.h3 {
     color: black;
 }
 
-footer {
-    text-align: center;
-    padding: 3px;
-    background-color: black;
-    color: white;
+.conteudo-secundario,
+h1 {
+    position: center;
 }

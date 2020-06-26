@@ -1,64 +1,158 @@
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>K-Means</title>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
-    <link rel="stylesheet" type="text/css" href="./stylesheets/means.css">
+    <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
+    <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!--<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />-->
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!--<link rel="stylesheet" type="text/css" href="./stylesheets/means.css">-->
     <script src='./javascripts/k-means.js'></script>
 
 </head>
-<style>
-    body {
-        background-image: url("./images/fundo.png.png")!important;
-    }
-</style>
 
 <body>
-    <div class='container-fluid'>
-        <h1>K-Means</h1>
+    <style>
+        body,
+        h1,
+        h2 {
+            font-family: "Raleway", sans-serif
+        }
+        
+        body,
+        html {
+            height: 100%
+        }
+        
+        p {
+            line-height: 2
+        }
+        
+        .bgimg,
+        .bgimg2 {
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .bgimg {
+            background-image: url("./images/robo.jpg") !important;
+        }
+        
+        .bgimg2 {
+            background-image: url("./images/Algori.jpg") !important;
+        }
+        
+        .row {
+            text-align: center;
+        }
+        
+        canvas {
+            display: block;
+            margin: 10px auto;
+        }
+        
+        .col-xs-4 {
+            text-align: center !important;
+        }
+        
+        .color {
+            color: red;
+        }
+    </style>
 
-        <div class='row'>
-            <div class='col-xs-4 col-xs-offset-4 instructions'>
+    <body>
+
+
+        <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+            <div class="w3-display-topleft w3-container w3-text-black w3-left">
+                <h1 class="w3-jumbo w3-text-black">K-Means</h1>
+                <p class="text-left">k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or
+                    cluster centroid), serving as a prototype of the cluster. This results in a partitioning of the data space into Voronoi cells. It is popular for cluster analysis in data mining. k-means clustering minimizes within-cluster variances
+                    (squared Euclidean distances), but not regular Euclidean distances, which would be the more difficult Weber problem: the mean optimizes squared errors, whereas only the geometric median minimizes Euclidean distances. For instance,
+                    better Euclidean solutions can be found using k-medians and k-medoids. The algorithm has a loose relationship to the k-nearest neighbor classifier, a popular machine learning technique for classification that is often confused with
+                    k-means due to the name. Applying the 1-nearest neighbor classifier to the cluster centers obtained by k-means classifies new data into the existing clusters. This is known as nearest centroid classifier or Rocchio algorithm.
+                </p>
                 <p>
-                    🅽🅾🆃🅴
-                    <p>
-                        ➤This interactive demo lets you explore the K-Means algorithm.
+                    To process the learning data, the K-means algorithm in data mining starts with a first group of randomly selected centroids, which are used as the beginning points for every cluster, and then performs iterative (repetitive) calculations to optimize the
+                    positions of the centroids It halts creating and optimizing clusters when either: The centroids have stabilized — there is no change in their values because the clustering has been successful. The defined number of iterations has been
+                    achieved.
+                </p>
+                <p class="color">
+                    Click on the option K-Means Algorithm in the menu below to access the example of how the algorithm works
+                    <p class="color "> To access the algorithm questionnaire, click on the Quiz option in the menu below. </p>
+                </p>
+
+            </div>
+        </header>
+
+
+        <div class="w3-bottom w3-hide-small">
+            <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+                <a href="./index.html" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+                <a href="#home" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">K-Means</a>
+                <a href="#us" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">K-Means Algorithm</a>
+                <a href="quizKMeans.html" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">Quiz K-Means</a>
+
+            </div>
+        </div>
+
+        <div class="w3-container w3-padding-64 w3-pale-red w3-wide bgimg2 w3-grayscale-min" id="us">
+            <div class="w3-content">
+                <h1 class="w3-center w3-text-grey"><b>K-Means Algorithm</b></h1>
+            </div>
+            <div class='container-fluid'>
+                <div class='row'>
+                    <div class='col-xs-4 col-xs-offset-4 instructions'>
                         <p>
-                            ➤Random points are generated in the graph and the algorithm groups the points in the closest clusters (groups). Clusters are the green points. the red points are centroides of the nearest cluster. ~
+                            🅽🅾🆃🅴
                             <p>
-                                ➤You can choose the number of cluster and the points (Cluster Centroides) are generated randomly through the database!
+                                ➤This interactive demo lets you explore the K-Means algorithm.
                                 <p>
-                                    ➤Advise to choose a clusters from 1 to 4 because it has little data to group many clusters.
+                                    ➤Random points are generated in the graph and the algorithm groups the points in the closest clusters (groups). Clusters are the green points. the red points are centroides of the nearest cluster.
                                     <p>
-                                        ➤The algorithm assigns each data point to the centroid of the nearest cluster. The algorithm moves the centroid (points) to the average position of all data points that belong to it. If none of the centroids move, it means that the algorithm has stopped
-                                        and all iterations have been made..
-
-
-                                        <div class='col-xs-4'>
-                                            <input type="text" id="number" name="number" />
-                                            <button type="button" onclick="setup();">Start</button>
-
-
-                                        </div>
-            </div>
-            <canvas id="canvas" height="400" width="400"></canvas>
-            <div>
-                <div id="conteudo-secundario">
-                    <h1>k-means algorithm</h1>
-                    <p>
-                        k-means clustering is a method of vector quantization, originally from signal processing, that aims to partition n observations into k clusters in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid),
-                        serving as a prototype of the cluster.
-                    </p>
-
+                                        ➤You can choose the number of cluster and the points (Cluster Centroides) are generated randomly through the database!
+                                        <p>
+                                            ➤Advise to choose a clusters from 1 to 4 because it has little data to group many clusters.
+                                            <p>
+                                                ➤The algorithm assigns each data point to the centroid of the nearest cluster. The algorithm moves the centroid (points) to the average position of all data points that belong to it. If none of the centroids move, it means that the algorithm has stopped
+                                                and all iterations have been made..
+                                                <p>➤Enter a number to start the algorithm ↓
+                                                </p>
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-outline-primary" type="button" onclick="setup();">Start</button>
+                                                    </div>
+                                                    <input type="text" id="number" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                                                </div>
+                    </div>
                 </div>
-
             </div>
 
-            <footer>
-                <p>IA Page<br>
-                    <a href="mailto:Rossamaral@hotmail.com">IApage@hotmail.com</a></p>
-            </footer>
+            <div class='row'>
+                <div class='col-xs-12 text-center position-center'>
+                    <canvas id="canvas" height="400" width="500"></canvas>
+                </div>
+            </div>
+
+
+        </div>
+        </div>
+        </div>
+    </body>
+
+</html>
 
 </body>
 

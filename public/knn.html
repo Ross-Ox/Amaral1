@@ -6,145 +6,213 @@
     <script src='//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
     <script src='//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js'></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./stylesheets/nn.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <!--<link rel="stylesheet" type="text/css" href="./stylesheets/nn.css">-->
     <script src='./javascripts/knn.js'></script>
-    <style>
-        body {
-            background-image: url("./images/fundo.png.png")!important;
-        }
-    </style>
+
 </head>
 
 <body>
-    <div class='container-fluid'>
-        <h1>K-Nearest Neighbors </h1>
+    <style>
+        body,
+        h1,
+        h2 {
+            font-family: "Raleway", sans-serif
+        }
+        
+        body,
+        html {
+            height: 100%
+        }
+        
+        p {
+            line-height: 2
+        }
+        
+        .bgimg,
+        .bgimg2 {
+            min-height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+        
+        .bgimg {
+            background-image: url("./images/robo.jpg") !important;
+        }
+        
+        .bgimg2 {
+            background-image: url("./images/Algori.jpg") !important;
+        }
+        
+        .row {
+            text-align: center;
+        }
+        
+        .color {
+            color: red;
+        }
+    </style>
 
-        <div class='row'>
-            <div class='col-xs-4 col-xs-offset-4 instructions'>
-                🅽🅾🆃🅴
+    <body>
+
+        <!-- Header / Home-->
+        <header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="home">
+            <div class="w3-display-topleft w3-container w3-text-black w3-left">
+                <h1 class="w3-jumbo w3-text-black">K-Nearest Neighbors</h1>
+                <p class="text-left">The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for classification and regression. In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is
+                    used for classification or regression, our example is of classification: In k-NN classification, the output is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the
+                    class most common among its k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor. In k-NN regression, the output is the property value
+                    for the object. This value is the average of the values of k nearest neighbors. k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until function
+                    evaluation.
+                </p>
                 <p>
-                    ➤This interactive demo lets you explore the K-Nearest Neighbors algorithm for classification.
-                    <p>
-                        ➤Each point in the plane is colored with the class that would be assigned to it using the K-Nearest Neighbors algorithm. Points for which the K-Nearest Neighbor algorithm results in a tie are colored white.
+                    Working of KNN Algorithm K-nearest neighbors (KNN) algorithm uses ‘feature similarity’ to predict the values of new datapoints which further means that the new data point will be assigned a value based on how closely it matches the points in the training
+                    set. We can understand its working with the help of following steps − Step 1 − For implementing any algorithm, we need dataset. So during the first step of KNN, we must load the training as well as test data. Step 2 − Next, we need
+                    to choose the value of K i.e. the nearest data points. K can be any integer. Step 3 − For each point in the test data do the following − 3.1 − Calculate the distance between test data and each row of training data with the help of
+                    any of the method namely: Euclidean, Manhattan or Hamming distance. The most commonly used method to calculate distance is Euclidean. 3.2 − Now, based on the distance value, sort them in ascending order. 3.3 − Next, it will choose
+                    the top K rows from the sorted array. 3.4 − Now, it will assign a class to the test point based on most frequent class of these rows.
+                </p>
+                <p class="color">
+                    Click on the option K-NN Algorithm in the menu below to access the example of how the algorithm works.
+                    <p class="color "> To access the algorithm questionnaire, click on the Quiz option in the menu below. </p>
+                </p>
+            </div>
+        </header>
+
+        <!-- Navbar (sticky bottom) -->
+        <div class="w3-bottom w3-hide-small">
+            <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+                <a href="./index.html" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">Home</a>
+                <a href="#home" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">K-Nearest Neighbors</a>
+                <a href="#us" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">K-NN Algorithm</a>
+                <a href="./quizKNN.html" style="width:25%" class="w3-bar-item w3-button w3-hover-blue">Quiz K-Nearest Neighbors</a>
+
+            </div>
+        </div>
+
+
+        <div class="w3-container w3-padding-64 w3-pale-red w3-wide bgimg2 w3-grayscale-min" id="us">
+            <div class="w3-content">
+                <h1 class="w3-center w3-text-grey"><b>K-NN Algorithm</b></h1>
+            </div>
+            <div class='container-fluid'>
+                <div class='row'>
+                    <div class='col-xs-4 col-xs-offset-4 instructions'>
+                        🅽🅾🆃🅴
                         <p>
-                            ➤You can move points around by clicking and dragging!
+                            ➤This interactive demo lets you explore the K-Nearest Neighbors algorithm for classification.
                             <p>
-                                ➤L1 is Metrics Euclidean it's the distance between two points, which can be proved by the repeated application of the Pythagorean theorem.
+                                ➤Each point in the plane is colored with the class that would be assigned to it using the K-Nearest Neighbors algorithm. Points for which the K-Nearest Neighbor algorithm results in a tie are colored white.
                                 <p>
-                                    ➤L2 is Manhattan Metric where the distance between two points is the sum of the absolute differences between their coordinates.
+                                    ➤You can move points around by clicking and dragging!
+                                    <p>
+                                        ➤L1 is Metrics Euclidean it's the distance between two points, which can be proved by the repeated application of the Pythagorean theorem.
+                                        <p>
+                                            ➤L2 is Manhattan Metric where the distance between two points is the sum of the absolute differences between their coordinates.
 
 
-            </div>
-        </div>
+                    </div>
+                </div>
 
-        <div class='row'>
-            <div class='col-xs-12 text-center'>
-                <canvas id='canvas'></canvas>
+                <div class='row'>
+                    <div class='col-xs-12 text-center'>
+                        <canvas id='canvas'></canvas>
 
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-4 col-xs-offset-2'>
-                <h3>Metric</h3>
-                <div class='btn-group' data-toggle='buttons'>
-                    <label class='btn btn-primary btn-lg' id='l1-btn'>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-xs-4 col-xs-offset-2'>
+                        <h3>Metric</h3>
+                        <div class='btn-group' data-toggle='buttons'>
+                            <label class='btn btn-primary btn-lg' id='l1-btn'>
                   <input type='radio' name='metric'> L1
                 </label>
-                    <label class='btn btn-primary btn-lg active' id='l2-btn'>
+                            <label class='btn btn-primary btn-lg active' id='l2-btn'>
                   <input type='radio' name='metric' checked> L2
                 </label>
-                </div>
-            </div>
-            <div class='col-xs-4'>
-                <h3>Num Neighbors (K)</h3>
-                <div class='btn-group' data-toggle='buttons'>
-                    <label class='btn btn-primary btn-lg active' id='k-1-btn'>
+                        </div>
+                    </div>
+                    <div class='col-xs-4'>
+                        <h3>Num Neighbors (K)</h3>
+                        <div class='btn-group' data-toggle='buttons'>
+                            <label class='btn btn-primary btn-lg active' id='k-1-btn'>
               <input type='radio' name='k' checked> 1
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-2-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-2-btn'>
               <input type='radio' name='k'> 2
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-3-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-3-btn'>
               <input type='radio' name='k'> 3
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-4-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-4-btn'>
               <input type='radio' name='k'> 4
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-5-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-5-btn'>
               <input type='radio' name='k'> 5
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-6-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-6-btn'>
               <input type='radio' name='k'> 6
             </label>
-                    <label class='btn btn-primary btn-lg' id='k-7-btn'>
+                            <label class='btn btn-primary btn-lg' id='k-7-btn'>
               <input type='radio' name='k'> 7
             </label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class='row'>
-            <div class='col-xs-4 col-xs-offset-2'>
-                <h3>Num classes</h3>
-                <div class='btn-group' data-toggle='buttons'>
-                    <label class='btn btn-primary btn-lg' id='num-cls-2-btn'>
+                <div class='row'>
+                    <div class='col-xs-4 col-xs-offset-2'>
+                        <h3>Num classes</h3>
+                        <div class='btn-group' data-toggle='buttons'>
+                            <label class='btn btn-primary btn-lg' id='num-cls-2-btn'>
               <input type='radio' name='num-cls'> 2
             </label>
-                    <label class='btn btn-primary btn-lg' id='num-cls-3-btn'>
+                            <label class='btn btn-primary btn-lg' id='num-cls-3-btn'>
               <input type='radio' name='num-cls'> 3
             </label>
-                    <label class='btn btn-primary btn-lg active' id='num-cls-4-btn'>
+                            <label class='btn btn-primary btn-lg active' id='num-cls-4-btn'>
               <input type='radio' name='num-cls' checked> 4
             </label>
-                    <label class='btn btn-primary btn-lg' id='num-cls-5-btn'>
+                            <label class='btn btn-primary btn-lg' id='num-cls-5-btn'>
               <input type='radio' name='num-cls'> 5
             </label>
-                </div>
-            </div>
-            <div class='col-xs-4'>
-                <h3>Num points</h3>
-                <div class='btn-group' data-toggle='buttons'>
-                    <label class='btn btn-primary btn-lg' id='num-pts-20-btn'>
+                        </div>
+                    </div>
+                    <div class='col-xs-4'>
+                        <h3>Num points</h3>
+                        <div class='btn-group' data-toggle='buttons'>
+                            <label class='btn btn-primary btn-lg' id='num-pts-20-btn'>
               <input type='radio' name='num-pts'> 20
             </label>
-                    <label class='btn btn-primary btn-lg' id='num-pts-30-btn'>
+                            <label class='btn btn-primary btn-lg' id='num-pts-30-btn'>
               <input type='radio' name='num-pts'> 30
             </label>
-                    <label class='btn btn-primary btn-lg active' id='num-pts-40-btn'>
+                            <label class='btn btn-primary btn-lg active' id='num-pts-40-btn'>
               <input type='radio' name='num-pts' checked> 40
             </label>
-                    <label class='btn btn-primary btn-lg' id='num-pts-50-btn'>
+                            <label class='btn btn-primary btn-lg' id='num-pts-50-btn'>
               <input type='radio' name='num-pts'> 50
             </label>
-                    <label class='btn btn-primary btn-lg' id='num-pts-60-btn'>
+                            <label class='btn btn-primary btn-lg' id='num-pts-60-btn'>
               <input type='radio' name='num-pts'> 60
             </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div>
-        <div id="conteudo-secundario">
-            <h1>k-nearest neighbors algorithm</h1>
-
-            <p>
-                The k-nearest neighbors algorithm (k-NN) is a non-parametric method used for classification and regression.In both cases, the input consists of the k closest training examples in the feature space. The output depends on whether k-NN is used for classification
-                or regression, our example is of classification: In k-NN classification, the output is a class membership. An object is classified by a plurality vote of its neighbors, with the object being assigned to the class most common among its
-                k nearest neighbors (k is a positive integer, typically small). If k = 1, then the object is simply assigned to the class of that single nearest neighbor. In k-NN regression, the output is the property value for the object. This value
-                is the average of the values of k nearest neighbors. k-NN is a type of instance-based learning, or lazy learning, where the function is only approximated locally and all computation is deferred until function evaluation.
-            </p>
-            <p>To perform a quiz related to the algorithm just click on the quiz button
-                <a class="btn btn-primary btn-lg" href="./quizKNN.html" role="button">Quiz</a>
-            </p>
         </div>
+    </body>
 
-    </div>
-    </div>
+</html>
 
-    <footer>
-        <p>IA Page<br>
-            <a href="mailto:Rossamaral@hotmail.com">IApage@hotmail.com</a></p>
-    </footer>
 </body>
 
 </html>

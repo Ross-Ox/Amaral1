@@ -1,24 +1,25 @@
 var Quiz;
 var test;
 var opccoes;
-window.onload = function () {
+window.onload = function() {
     Quiz = document.getElementById('quizKnn')
     getperguntas()
-    //opccoes = document.getElementById('opccoes')
+        //opccoes = document.getElementById('opccoes')
 
 }
 var serverData = {};
 var quizz = []
 var quizResults = {};
+
 function getperguntas() {
     $.ajax({
         url: '/api/Questionario',
         method: 'get',
         contentType: "application/json", // sending in json
         dataType: "json", // receiving in json
-        success: function (res, status) {
+        success: function(res, status) {
             quiz = res;
-            serverData = res;//Used for later comparision;
+            serverData = res; //Used for later comparision;
             console.log("Testing res ::: ", quiz);
             var html = ''
             var htm = ''
@@ -39,7 +40,7 @@ function getperguntas() {
             quizz.push(quiz)
 
         },
-        error: function () {
+        error: function() {
 
         }
     })
@@ -47,7 +48,7 @@ function getperguntas() {
 }
 
 
-
+/*
 var certo
 var perg
 var list = []
@@ -64,24 +65,25 @@ function verificar(val) {
     if (certo == sessionStorage.getItem('resp')) {
 
         /* alert("Your answer has been saved \nAnswer the next question! ") */
-        $('#modelId').modal('show');
+//$('#modelId').modal('show');
 
-    } else {
-        /* alert("Your answer has been saved  \nAnswer the next question!") */
-        $('#modelId').modal('show');
-    }
-    list.push(['Correct answers:' + '\n' + perg + '\n' + certo + '\n'])
+//}
+//else {
+/* alert("Your answer has been saved  \nAnswer the next question!") 
+    $('#modelId').modal('show');
+}
+list.push(['Correct answers:' + '\n' + perg + '\n' + certo + '\n'])
     //console.log(list)
 
 }
-
+*/
 
 function submeter() {
     //Get quiz results;
     let quizData = {};
     let results = "";
     let keys = Object.keys(quizResults);
-    console.log("Quiz Results ::: ", quizResults);
+    /*  console.log("Quiz Results ::: ", quizResults); */
     keys.forEach(((key, index) => {
         let result = $(`input[name=${key}]:checked`).val();
         //Index will be used to locate question
@@ -90,12 +92,12 @@ function submeter() {
         if (serverData[index].respostas.toString().toLowerCase() !== quizData[key].toString().toLowerCase()) {
             //Wrong answer
             results += `<p>Q: ${serverData[index].perguntas}: <small class='text-danger'>(Wrong answer:${quizData[key].toString()})</small><br/>Right answer is: ${serverData[index].respostas} </p>`;
-        }else{
+        } else {
             //Correct answer
             results += `<p>Q: ${serverData[index].perguntas}: <small class='text-success'>Correct answer</small></p>`;
         }
     }));
-    console.log("Information from quiz ::: ", quizData,results);
+    /* console.log("Information from quiz ::: ", quizData,results); */
     /*  alert(list); */
     $("#results-modal-body").html(results);
     $('#resultsModal').modal('show');
@@ -103,10 +105,10 @@ function submeter() {
 
 }
 
-
+/*
 
 function test(o) {
     resp = document.getElementById(o).value
     window.sessionStorage.setItem('resp', resp)
 
-}
+}*/
